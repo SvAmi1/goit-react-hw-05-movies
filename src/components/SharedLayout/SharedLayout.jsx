@@ -1,18 +1,8 @@
 import React from 'react';
-import { Outlet, NavLink } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import './SharedLayout.css';
-import styled from 'styled-components';
-import { Header, LayoutList, LayoutListItem } from './SharedLayout.styled';
+import { Header, LayoutList, LayoutListItem, StyledNavLink } from './SharedLayout.styled';
 
-const StyledLink = styled(NavLink)`
-  color: black;
-  font-weight: 700;
-  text-decoration: none;
-
-  &.active {
-    color: tomato;
-  }
-`;
 
 export const SharedLayout = () => {
   return (
@@ -20,12 +10,12 @@ export const SharedLayout = () => {
       <Header>
         <LayoutList>
           <LayoutListItem>
-            <StyledLink to="/" end>
+            <StyledNavLink to="/" end>
               Home
-            </StyledLink>
-          </L>
+            </StyledNavLink>
+          </LayoutListItem>
           <LayoutListItem>
-            <StyledLink to="/movies">Movies</StyledLink>
+            <StyledNavLink to="/movies">Movies</StyledNavLink>
           </LayoutListItem>
         </LayoutList>
       </Header>

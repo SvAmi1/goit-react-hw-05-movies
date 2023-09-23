@@ -1,4 +1,5 @@
 import { styled } from "styled-components";
+import { NavLink } from 'react-router-dom';
 
 export const Header = styled.header`
  box-shadow: -1px 18px 24px -14px rgba(66, 68, 90, 1);
@@ -20,7 +21,7 @@ export const LayoutListItem = styled.li`
   margin-left: 20px;
 `;
 
-export const StyledLink = styled(NavLink)`
+export const StyledNavLink = styled(NavLink)`
   color: black;
   font-weight: 700;
   text-decoration: none;
