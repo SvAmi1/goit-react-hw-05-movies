@@ -12,12 +12,12 @@ const options = {
   theme: 'light',
 };
 
-export const error = () =>
+export const error1 = () =>
   toast.error('Oops, something went wrong...', options);
 export const warn = () =>
   toast.warn('Sorry, you must enter something...', options);
 export const empty = () =>
-  toast.warn('Sorry, no photos with this query...', options);
-export const info = () => toast.info('Oops! No more photos :(', options);
+  toast.warn('Sorry, no movies with this query...', options);
+export const info = () => toast.info('Oops! No more movies :(', options);
 export const success = total =>
-  toast.success(`WOW!!! We found ${total} photos!`, options);
+  toast.success(`WOW!!! We found it!`, options);
