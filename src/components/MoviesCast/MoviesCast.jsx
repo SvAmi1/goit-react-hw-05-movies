@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { fetchMovies } from '../services/api';
-import { Loader } from '../Loader/Loader';
+import { fetchMovies } from '../../services/api';
+// import { Loader } from '../Loader/Loader';
 import { ToastContainer } from 'react-toastify';
-import { success, warn, info, empty, error1 } from 'services/toasts';
+import { success, error1 } from '../../services/toasts';
 
 export const MoviesCast = () => {
   const { movieId } = useParams();
@@ -23,18 +23,18 @@ export const MoviesCast = () => {
         error1();
       } finally {
         success();
+        setIsLoading(false);
       }
     }, 400);
   }, [movieId]);
 
   return (
     <section>
-      <ul style={{ listStyle: 'none' }}>
+      <ul>
         {details !== [] &&
           details.map(info => (
             <li key={info.credit_id}>
-              <img
-                src={
+              <img src={
                   info.profile_path &&
                   `http://image.tmdb.org/t/p/w185${info.profile_path}`
                 }
