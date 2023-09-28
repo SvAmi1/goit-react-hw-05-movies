@@ -1,6 +1,6 @@
 import { toast } from 'react-hot-toast';
 import { useEffect, useState } from 'react';
-import { fetchMovies } from '../../services/api';
+import { fetchMovies } from 'services/api';
 import { SearchMovie } from 'components/SearchMovie/SearchMovie';
 
 export const Home = () => {

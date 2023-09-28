@@ -2,11 +2,11 @@ import { toast } from 'react-hot-toast';
 import { MdYoutubeSearchedFor } from 'react-icons/md';
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { fetchMovies } from '../../services/api';
+import { fetchMovies } from 'services/api';
 import { SearchMovie } from 'components/SearchMovie/SearchMovie';
 import { Form, Input, Search } from 'components/SearchMovie/SearchMovie.styled';
 
-const Movies = () => {
+export const Movies = () => {
   const [movies, setMovies] = useState([]);
   const [searchQuery, setSearchQuery] = useSearchParams();
   const currentSearch = searchQuery.get('search') ?? '';
@@ -78,4 +78,3 @@ const Movies = () => {
   );
 };
 
-export default MoviesPage;

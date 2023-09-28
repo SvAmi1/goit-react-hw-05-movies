@@ -30,3 +30,62 @@ export const StyledNavLink = styled(NavLink)`
     color: tomato;
   }
 `;
+
+export const EscBtn = styled(NavLink)` 
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 120px;
+  color: black;
+  background-color: whitesmoke;
+  border: 2px solid black;
+  border-radius: 8px;
+  padding: 4px;
+  margin: 70px auto 22px 22px;
+
+  &:hover,
+  :focus {
+    color: blueviolet;
+    background-color: black;
+  }
+  `;
+
+export const Section = styled.section`
+display: flex;
+
+h4 {
+  margin-top: 0;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin-top: 0;
+  height: fit-content;
+
+  li {
+    margin-right: 18px;
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+}
+`;
+
+export const Info = styled.div`
+  margin-left: 22px;
+  h4 {
+    margin-bottom: 0;
+  }
+`;
+
+export const Loading = styled.div`
+  font-size: 28px;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+`;

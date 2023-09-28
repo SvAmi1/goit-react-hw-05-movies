@@ -2,17 +2,19 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchMovies } from '../../services/api';
 // import { Loader } from '../Loader/Loader';
-import { ToastContainer } from 'react-toastify';
-import { success, error1 } from '../../services/toasts';
+// import { ToastContainer } from 'react-toastify';
+// import { success, error1 } from '../../services/toasts';
+import { toast } from 'react-hot-toast';
 
 export const MoviesCast = () => {
   const { movieId } = useParams();
   const [details, setDetails] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  // const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const route = `/movie/${movieId}/credits`;
-   setIsLoading(true);
+  //  setIsLoading(true);
+  toast.loading('Wait a second...', { duration: 400 });
 
     setTimeout(async () => {
       try {
@@ -20,11 +22,12 @@ export const MoviesCast = () => {
         setDetails([...cast]);
       } catch (error) {
         console.warn(error);
-        error1();
+        toast.error('Oops! Something went wrong...');
       } finally {
-        success();
-        setIsLoading(false);
+        toast.success('You`ve got it!');
       }
+        // success();
+        // setIsLoading(false);
     }, 400);
   }, [movieId]);
 
@@ -48,7 +51,7 @@ export const MoviesCast = () => {
             </li>
           ))}
       </ul>
-      <ToastContainer/>
+      {/* <ToastContainer/> */}
     </section>
   );
 };
