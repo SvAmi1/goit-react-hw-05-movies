@@ -1,8 +1,7 @@
 import { Toaster } from 'react-hot-toast';
-import { lazy } from 'react';
+import { lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { SharedLayout } from './SharedLayout/SharedLayout';
-// import SharedLayout from './SharedLayout/SharedLayout';
 
 const Home = lazy(() => import('../pages/Home'));
 const Movies = lazy(() => import('../pages/Movies'));
@@ -14,6 +13,7 @@ const MoviesReviews = lazy(() => import('./MoviesReviews/MoviesReviews'));
 export const App = () => {
   return (
     <>
+    <Suspense fallback={<div>Loading...</div>}>
       <Routes>
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<Home />} />
@@ -25,6 +25,7 @@ export const App = () => {
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
+      </Suspense>
       <Toaster />
      </>
   );

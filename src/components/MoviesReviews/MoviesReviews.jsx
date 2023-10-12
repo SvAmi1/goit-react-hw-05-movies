@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { fetchMovies } from '../../services/api';
+import { fetchMovies } from 'services/api';
 // import { ToastContainer } from 'react-toastify';
 // import { success, error1 } from '../../services/toasts';
 import { toast } from 'react-hot-toast';
